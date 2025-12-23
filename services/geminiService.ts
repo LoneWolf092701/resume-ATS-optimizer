@@ -4,7 +4,7 @@ import { ArchitectAPIResponse } from "../types";
 
 export async function architectResumeAndLetter(resume: string, jd: string): Promise<ArchitectAPIResponse> {
   // This will work during build time with the workflow
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || `AIzaSyDRO3_eM9eYx3Mj8D1gRw7S55L8feGCzls`;
   
   if (!apiKey) {
     throw new Error("API key not configured");
