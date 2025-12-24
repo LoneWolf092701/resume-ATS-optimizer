@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { ArchitectAPIResponse } from "../types";
 
 export async function architectResumeAndLetter(resume: string, jd: string): Promise<ArchitectAPIResponse> {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY }) || `AIzaSyAT2TkdRrWTuyt1AENPTdEiI4OaM8tW6Zg`;
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || `AIzaSyAT2TkdRrWTuyt1AENPTdEiI4OaM8tW6Zg` }) ;
   
   const prompt = `
     You are the "Resume Architect" API. Your goal is to analyze a user's input (Resume + Optional Job Description) and return a structured JSON object used to generate a UI and a professional document suite.
